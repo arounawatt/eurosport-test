@@ -1,0 +1,90 @@
+.PlayerCard {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin: $space-s;
+    background-color: $white;
+    box-shadow: 0px 9px 6px 0px rgba(85,85,85,0.2);
+
+    @include gridle-state(medium) {
+      margin: $space-m;
+    }
+
+    .PlayerCard__nameAvatar {
+      display: flex;
+      background-color: palette(secondary);
+      color: $white;
+      align-items: center;
+      padding: $space-s;
+
+      .PlayerCard__avatarImg {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+
+    .PlayerCard__name {
+      font-size: 3rem;
+      padding: $space-s;
+
+      @include gridle-state(medium) {
+        font-size: 3.4rem;
+      }
+    }
+
+    .PlayerCard__country {
+      display: flex;
+      align-items: center;
+
+      .PlayerCard__countryImg {
+        width: 45px;
+        margin-right: $space-xs;
+      }
+    }
+  }
+
+  .PlayerCard__stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 3rem;
+    margin: $space-m $space-xs;
+  }
+
+  .PlayerCard__statsColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .PlayerCard__statsLabel {
+      text-transform: uppercase;
+      font-size: 2rem;
+
+      @include gridle-state(medium) {
+        font-size: 2.2rem;
+      }
+    }
+
+    .PlayerCard__statsValue {
+      font-weight: bold;
+    }
+  }
+
+  .PlayerCard__winDefeat {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: $space-m 0;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+
+    .PlayerCard__winDefeatColumn {
+      &:nth-child(1) {
+        color: palette(success);
+      }
+      &:nth-child(2) {
+        color: palette(info);
+      }
+    }
+  }
+}

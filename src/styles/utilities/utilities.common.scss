@@ -1,0 +1,6 @@
+/**
+ * Class to hide text while keeping it accessible
+ */
+.u-hidden-wording {
+  @include accessible-invisibility;
+}

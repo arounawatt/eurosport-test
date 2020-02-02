@@ -1,0 +1,13 @@
+@mixin outline {
+  @if $theme == "renault" {
+    &:focus {
+      outline: 1px dotted $grey;
+    }
+  }
+
+  @if $theme == "dacia" {
+    &:focus {
+      outline: 1px dotted $navyBlue;
+    }
+  }
+}

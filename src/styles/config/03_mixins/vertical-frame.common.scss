@@ -1,0 +1,16 @@
+/**
+* Sets a vertical frame in front of current item.
+*/
+@mixin verticalFrame($color: inherit) {
+  position: relative;
+  padding-left: $space-m;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    content: "";
+    background: $color;
+    height: 100%;
+    width: $space-xs;
+  }
+}

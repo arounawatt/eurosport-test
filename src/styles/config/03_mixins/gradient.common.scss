@@ -1,0 +1,55 @@
+/* Create other mixin alternate, don't use directly gradient mixin */
+
+@mixin gradient(
+  $color1,
+  $color2,
+  $width: 100%,
+  $direction: left,
+  $height: auto
+) {
+  background-image: linear-gradient(to $direction, $color1, $color2);
+  bottom: 0;
+  content: "";
+  height: $height;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $width;
+}
+
+@mixin gradient-leftwhite {
+  @include gradient(
+    rgba(palette(neutral, white), 0),
+    rgba(palette(neutral, white), 0.9),
+    70%
+  );
+}
+
+@mixin gradient-leftblack {
+  @include gradient(
+    rgba(palette(neutral, black), 0),
+    rgba(palette(neutral, black), 0.9),
+    70%
+  );
+}
+
+@mixin gradient-bottomwhite {
+  @include gradient(
+    rgba(palette(neutral, white), 0.9),
+    rgba(palette(neutral, white), 0),
+    100%,
+    bottom,
+    70%
+  );
+}
+
+@mixin gradient-bottomblack {
+  @include gradient(
+    rgba(palette(neutral, black), 0.9),
+    rgba(palette(neutral, black), 0),
+    100%,
+    bottom,
+    70%
+  );
+}

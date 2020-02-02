@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListPLayers should render correctly 1`] = `"<div class=\\"ListPlayers\\"><mock-player-card item=\\"[object Object]\\"></mock-player-card><mock-player-card item=\\"[object Object]\\"></mock-player-card></div>"`;
+
+exports[`ListPLayers should render error 1`] = `"<div class=\\"ListPlayers\\"><span> A error occur. please check your connection or retry later</span></div>"`;

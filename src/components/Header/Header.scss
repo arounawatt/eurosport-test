@@ -1,0 +1,16 @@
+.Header {
+  display: flex;
+  align-items: center;
+  background-color: palette(primary);
+  padding: 32px;
+
+  .Header__logo {
+    width: 200px;
+
+    @include gridle-state(medium) {
+      width: 400px;
+    }
+  }
+
+
+}

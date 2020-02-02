@@ -1,0 +1,11 @@
+@mixin responsive-space-after {
+  @include gridle_state(medium) {
+    margin-bottom: $space-s;
+  }
+
+  @include gridle_state(large) {
+    margin-bottom: $space-m;
+  }
+
+  margin-bottom: $space-xs;
+}

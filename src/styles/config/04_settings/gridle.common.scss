@@ -1,0 +1,90 @@
+/*
+
+---
+name: Common Grid settings
+category: template/Grid
+---
+
+Grids are using Gridle
+
+* Mobile first approach, all styles must be done for the mobile first,
+* Two breakpoints : default, medium, large,
+* Three template helpers : GridContainer, GridRow and Grid,
+* Prefer semantic classes (use Gridle sass mixins for components).
+* GridContainer, GridRow and GridX should be mostly used as helpers for the CMS part.
+
+*/
+
+/**
+ * Default mobile first parameters
+ */
+@include gridle_setup(
+  (
+    context: 12,
+    gutter-width: 4px
+  )
+);
+
+/**
+ * Apply a style for a small device only (mobile first = default)
+ * Don't use "default", it will override the previous one
+ */
+@include gridle_register_state(
+  small,
+  (
+    max-width: 669px
+  )
+);
+
+/**
+ * Medium devices parameters (tablet)
+ */
+@include gridle_register_state(
+  medium,
+  (
+    min-width: 670px,
+    gutter-width: 8px
+  )
+);
+
+/**
+ * Large devices parameters (desktop)
+ */
+@include gridle_register_state(
+  large,
+  (
+    min-width: 1024px,
+    gutter-width: 16px
+  )
+);
+
+/**
+ * Very large devices parameters (large desktop)
+ */
+@include gridle_register_state(
+  xlarge,
+  (
+    min-width: 1280px,
+    gutter-width: 16px
+  )
+);
+
+/**
+ * Landscape orientation on mobile
+ */
+@include gridle_register_state(
+  landscape,
+  (
+    query: "(orientation : landscape)"
+  )
+);
+
+/**
+* Not in Desktop
+**/
+@include gridle_register_state(
+  notDesktop,
+  (
+    max-width: 1023px
+  )
+);

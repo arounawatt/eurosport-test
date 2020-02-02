@@ -1,0 +1,43 @@
+@mixin radio {
+  display: none;
+
+  $circleSize: 20px;
+
+  + label {
+    display: inline-block;
+    position: relative;
+    padding-left: $space-m + $space-s;
+    font-size: 1.4rem;
+
+    &::before {
+      @include center-vertically;
+
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: $circleSize;
+      height: $circleSize;
+      border: 1px solid palette(neutral, medium);
+      border-radius: 50%;
+      background-color: palette(neutral, white);
+    }
+
+    &::after {
+      background-color: palette(neutral, white);
+    }
+  }
+
+  &:checked + label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: calc(#{$circleSize} / 2);
+    width: 12px;
+    height: 12px; /* stylelint-disable-line declaration-property-unit-whitelist */
+    border-radius: 50%;
+    background-color: palette(primary);
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,81 @@
+//creates a half arrow at the start of the link. You can chose small or medium (default) for parameter.
+
+@mixin link-arrow($size: medium) {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  @if $theme == "renault" {
+    display: block;
+    padding-left: $space-l + $space-s;
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      background-color: palette(primary);
+      height: 2px; /* stylelint-disable-line declaration-property-unit-whitelist */
+    }
+
+    &::before {
+      position: absolute;
+      top: $space-s;
+      left: 0;
+      width: $space-l;
+      margin-right: $space-s;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    &::after {
+      position: absolute;
+      top: $space-s;
+      left: 26px;
+      width: 6px;
+      transform: rotate(45deg);
+      transform-origin: 100% 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: palette(primary);
+    }
+  }
+
+  @if $theme == "dacia" {
+    padding-right: 30px;
+    color: palette(primary, light);
+    font-weight: bold;
+
+    &::before,
+    &::after {
+      @include center-vertically;
+
+      width: 7px;
+      height: 1px; /* stylelint-disable-line declaration-property-unit-whitelist */
+      right: 6px;
+      background-color: palette(primary, light);
+      transition: right 0.3s;
+    }
+
+    &::before {
+      margin-top: -2px;
+      transform: translate3d(0, -50%, 0) rotate(45deg);
+    }
+
+    &::after {
+      margin-top: 2px;
+      transform: translate3d(0, -50%, 0) rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}

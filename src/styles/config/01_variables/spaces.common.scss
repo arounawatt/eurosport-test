@@ -1,0 +1,57 @@
+/**
+ * All variables here should be prefixed with "$space-"
+ */
+
+/**
+ * Base spaces
+ */
+$space-xs: 4px;
+$space-s: 8px;
+$space-m: 16px;
+$space-l: 32px;
+$space-xl: 64px;
+
+/**
+ * Spaces equal all around the element
+ */
+$space-inset-xs: $space-xs;
+$space-inset-s: $space-s;
+$space-inset-m: $space-m;
+$space-inset-l: $space-l;
+$space-inset-xl: $space-xl;
+
+/**
+ * Left and right spaces larger than top and bottom spaces
+ */
+$space-squished-inset-xs: $space-xs $space-s;
+$space-squished-inset-s: $space-s $space-m;
+$space-squished-inset-m: $space-m $space-l;
+$space-squished-inset-l: $space-l $space-xl;
+$space-squished-inset-xl: $space-xl 128px;
+
+/**
+ * Top and bottom spaces larger than left and right spaces
+ */
+$space-stretched-inset-xs: $space-s $space-xs;
+$space-stretched-inset-s: $space-m $space-s;
+$space-stretched-inset-m: $space-l $space-m;
+$space-stretched-inset-l: $space-xl $space-l;
+$space-stretched-inset-xl: 128px $space-xl;
+
+/**
+ * Elements stacked on top of other blocks
+ */
+$space-stack-xs: 0 0 $space-xs;
+$space-stack-s: 0 0 $space-s;
+$space-stack-m: 0 0 $space-m;
+$space-stack-l: 0 0 $space-l;
+$space-stack-xl: 0 0 $space-xl;
+
+/**
+ * Elements positionned in a line, pushing the next one to the right
+ */
+$space-inline-xs: 0 $space-xs 0 0;
+$space-inline-s: 0 $space-s 0 0;
+$space-inline-m: 0 $space-m 0 0;
+$space-inline-l: 0 $space-l 0 0;
+$space-inline-xl: 0 $space-xl 0 0;

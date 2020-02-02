@@ -1,0 +1,31 @@
+//add left and right margins to a block, first child of the main content
+@mixin block-layout-horizontal {
+  margin-right: $space-s;
+  margin-left: $space-s;
+
+  @include gridle_state(medium) {
+    margin-right: $space-m;
+    margin-left: $space-m;
+  }
+
+  @include gridle_state(large) {
+    margin-right: $space-l;
+    margin-left: $space-l;
+  }
+}
+
+//some blocks have larger horizontal margins
+@mixin block-layout-horizontal-small {
+  margin-right: $space-l;
+  margin-left: $space-l;
+
+  @include gridle_state(medium) {
+    margin-right: $space-xl;
+    margin-left: $space-xl;
+  }
+
+  @include gridle_state(large) {
+    margin-right: $space-xl * 2;
+    margin-left: $space-xl * 2;
+  }
+}

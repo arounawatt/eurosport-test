@@ -1,0 +1,13 @@
+@mixin ratio($ratio, $width: 100%) {
+  position: relative;
+  width: $width;
+  overflow: hidden;
+  padding-top: $width / $ratio;
+
+  img {
+    @include center-both;
+
+    width: 100%;
+    height: auto;
+  }
+}

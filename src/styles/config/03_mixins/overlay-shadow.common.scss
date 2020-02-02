@@ -1,0 +1,34 @@
+/**
+ * Hides wording while keeping it accessible
+ */
+@mixin overlay-shadow {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin tooltip-tick {
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: $space-m;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &::before {
+    top: 100%;
+    border-width: 16px 10px 0;
+    border-color: palette(neutral, white) transparent transparent;
+    z-index: 1;
+  }
+
+  &::after {
+    top: calc(100% + 1px);
+    border-width: 16px 12px 0;
+    border-color: rgba(0, 0, 0, 0.05) transparent transparent;
+  }
+}

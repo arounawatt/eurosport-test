@@ -1,0 +1,6 @@
+/**
+ * Will take a font from a context (renault or dacia)
+ */
+@function themefont($name: "default") {
+  @return map-get($font-theme, $name);
+}

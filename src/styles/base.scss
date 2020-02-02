@@ -1,0 +1,212 @@
+@import "~normalize-scss/sass/_normalize";
+
+/**
+ * Normalizing styles to have the same browsers initial config
+ */
+@include normalize();
+
+/**
+ * Utilities
+ */
+@import "../styles/utilities/utilities.common.scss";
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+is-hidden fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%; /* stylelint-disable-line declaration-property-unit-whitelist */
+  vertical-align: baseline;
+}
+
+/**
+ * Default body behaviors
+ */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1.4rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: themefont("Roboto");
+  line-height: 1.45;
+  direction: ltr;
+
+  /* This is added to prevent the overflow errors in Edge */
+  overflow-x: hidden;
+  font-weight: 300;
+  background-color: $grey;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Default box model must be "border-box"
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * We need a base font-size in %
+ */
+html {
+  font-size: 62.5%; /* stylelint-disable-line declaration-property-unit-whitelist */
+}
+
+button {
+  border: 0;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/**
+ * Removes cross icon for input fields, in ie11+ browsers
+ */
+[type="input"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-highlight {
+  font-weight: bold;
+}
+
+.is-disabled {
+  background-color: #ddd !important;
+  cursor: inherit !important;
+}
+
+b {
+  font-weight: 600;
+}
+
+#___gatsby {
+  overflow: hidden;
+}

@@ -1,0 +1,20 @@
+@mixin quantity-query($number, $comparison: "equal") {
+  $nth: "n + #{$number}";
+
+  /* stylelint-disable */
+  @if index(("greater" "more" ">"), $comparison) {
+    $nth: "n + #{$number}";
+  } @else if index(("less" "fewer" "<"), $comparison) {
+    $nth: "-n + #{$number}";
+  } @else if index(("equal" "same" "="), $comparison) {
+    $nth: $number;
+  }
+  /* stylelint-enable */
+
+  &:nth-last-child(#{$nth}):first-child {
+    &,
+    & ~ * {
+      @content;
+    }
+  }
+}

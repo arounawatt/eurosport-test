@@ -1,0 +1,63 @@
+/**
+ * Creates a thin separator between items list in column
+ * Uses ::after pseudo element.
+ *
+ * $horizontal-margin => top and bottom space around separator, 0 is default. Will apply 50% top & 50% bottom.
+ * $vertical-padding => reduces separator width, 0 (default) gives 100% width. Will apply to left & right.
+ */
+
+/** Base mixin, do not use outside of this file! **/
+@mixin _item_separator_horizontal_(
+  $color,
+  $horizontal-margin,
+  $vertical-padding
+) {
+  position: relative;
+  padding-bottom: $horizontal-margin;
+
+  &::after {
+    @include center-horizontally();
+
+    display: block;
+    content: "";
+    height: 1px; /* stylelint-disable-line declaration-property-unit-whitelist */
+    background-color: $color;
+    bottom: $horizontal-margin / 2;
+
+    /* stylelint-disable */
+    @if $vertical-padding == 0 {
+      width: 100%;
+    } @else {
+      width: calc(100% - #{$vertical-padding} * 2);
+    }
+    /* stylelint-enable */
+  }
+}
+
+/** Applies after to each element except the last one **/
+@mixin item_separator_horizontal_between(
+  $color: palette(neutral),
+  $horizontal-margin: 0,
+  $vertical-padding: 0
+) {
+  &:not(:last-of-type) {
+    @include _item_separator_horizontal_(
+      $color,
+      $horizontal-margin,
+      $vertical-padding
+    );
+  }
+}
+
+/** Applies after to each element **/
+@mixin item_separator_horizontal(
+  $color: palette(neutral),
+  $horizontal-margin: 0,
+  $vertical-padding: 0
+) {
+  @include _item_separator_horizontal_(
+    $color,
+    $horizontal-margin,
+    $vertical-padding
+  );
+}

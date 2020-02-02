@@ -1,0 +1,9 @@
+.ListPlayers {
+	display: flex;
+	flex-direction: column;
+	margin: $space-s;
+
+	@include gridle-state(medium) {
+		flex-direction: row;
+	}
+}

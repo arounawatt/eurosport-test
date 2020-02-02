@@ -1,0 +1,25 @@
+/**
+ * Colors mapping
+ * All variables here should be prefixed with "$color-"
+ */
+/* stylelint-disable color-no-hex */
+
+$black: #333;
+$grey: #f2f2f2;
+$white: #fffffe;
+
+$color-theme: (
+  primary: (
+    base: #141c4c,
+  ),
+  secondary: (
+    base: #070a25
+  ),
+  info: (
+    base: #d84431
+  ),
+  success: (
+    base: #69af41
+  )
+);
+/* stylelint-enable color-no-hex */
