@@ -6,4 +6,4 @@
 3.  **By default the port is 8000 but if it's already in use, it will automaticly deploy website on new port (8001, 8002 until find the free port)**
 
 ## For the test
-**tap the command yarn jest to run all unit test**
+**tap the command "yarn jest" or "npm test" to run all unit test**
